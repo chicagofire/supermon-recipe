@@ -1,0 +1,31 @@
+{% set version = "0.1.0" %}
+
+package:
+  name: supermon 
+  version: "{{ version }}"
+
+source:
+  git_url: https://github.com/chicagofire/supermon
+  git_rev: "{{ version }}"
+
+build:
+  number: 0
+  skip: true  # [win or py3k]
+
+requirements:
+  build:
+    - python
+    - supervisor >=3
+  run:
+    - python
+    - supervisor >=1
+
+about:
+  home: https://github.com/chicagofire/supermon
+  license: BSD 3-clause
+  summary: utlity extensions for supervisord
+
+extra:
+  recipe-maintainers:
+    - chicagofire
+
